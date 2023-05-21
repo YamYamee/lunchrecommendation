@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/public/main.css" />
+        <title>메인페이지</title>
+    </head>
+    <body>
+        <div class="hidden" style="display: none;">
+            <%=userid%>
+        </div>
+        <header>
+            <img src="/public/logo.png" class="home" />
+        </header>
+        <aside>
+            <img src="/public/MYPIC.jpg" />
+            <div class="menu">
+                <p>
+                    글쓰기
+                </p>
+            </div>
+            <div class="menu2">
+                <p>
+                    메뉴추천
+                </p>
+            </div>
+        </aside>
+        <main>
+            <% for (let i = data.length - 1; i >= 0; i--) { %>
+            <div class="container" id="<%=data[i].postId%>">
+                <div class="left">
+                    <img src="<%=data[i].writerPic%>" class="userpic" />
+                </div>
+                <div class="right">
+                    <p class="name">
+                        <%=data[i].writerName%>
+                    </p>
+                    <p class="time">
+                        <%=data[i].date.slice(0, 25);%>
+                    </p>
+                    <% if ((userid == data[i].writer) || userid == "108758216885974271525") { %>
+                    <img src="/public/x.png" class="delete" id="<%=data[i].postId%>" />
+                    <% } %>
+                    <p class="maintext">
+                        <%=data[i].content%>
+                    </p>
+                    <div class="under">
+                        <img
+                            src="/public/heart.png"
+                            class="heart"
+                            data-id="<%=data[i].postId%>"
+                            data-likes="<%=data[i].likesList%>"
+                        />
+                        <p>
+                            <%=data[i].likes%>
+                        </p>
+                        <img src="/public/chat.png" class="chat" />
+                        <p>
+                            <%=data[i].comments%>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+
+            <div class="container" style="margin-bottom:65px;">
+                <div class="left">
+                    <div class="img"></div>
+                </div>
+                <div class="right">
+                    <p class="name">
+                        안내드림
+                    </p>
+                    <p class="time">
+                        3시간전
+                    </p>
+                    <img src="/public/x.png" class="delete" />
+                    <p class="maintext">
+                        이 곳은 오늘 먹은 메뉴를 공유하는 공간입니다! 글쓰기를 눌러서 글을 작성해보세요!
+                    </p>
+                    <div class="under">
+                        <img src="/public/heart.png" class="heart" />
+                        <p>
+                            32
+                        </p>
+                        <img src="/public/chat.png" class="chat" />
+                        <p>
+                            32
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="phone">
+            <div class="button1">
+                <p>
+                    글쓰기
+                </p>
+            </div>
+            <div class="button2">
+                <p>
+                    메뉴 추천받기
+                </p>
+            </div>
+        </div>
+    </body>
+
+    <script
+        src="https://code.jquery.com/jquery-3.6.4.js"
+        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+        crossorigin="anonymous"
+    ></script>
+
+    <script>
+           $('.menu').on('click', function () {
+               window.location.replace(`/write`);
+           });
+           $('.button1').on('click', function () {
+               window.location.replace(`/write`);
+           });
+           $('.menu2').on('click', function () {
+               window.location.replace(`/suggestion`);
+           });
+           $('.button2').on('click', function () {
+               window.location.replace(`/suggestion`);
+           });
+           $('.home').on('click', function () {
+               window.location.replace(`/`);
+           });
+		  $('.container').on('click', function () {
+			  
+			  let id = $(this)[0].id
+              window.location.replace(`/detail/${id}`);
+           });
+
+           $('.delete').click(function (e) {
+			   e.stopPropagation();
+               let id = e.target.id;
+               var clicked = $(this);
+
+               console.log($(this)[0]);
+
+               $.ajax({
+                   method: 'DELETE',
+                   url: '/delete',
+                   data: { postid: id },
+               })
+                   .done(function (결과) {
+                       alert('삭제되었습니다!');
+                       clicked.parent('div').parent('div').fadeOut();
+                   })
+                   .fail(function (xhr, textStatus, errorThrown) {
+                       console.log(xhr, textStatus, errorThrown);
+                   });
+           });
+
+           $('.heart').on('click', function (e) {
+			e.stopPropagation();
+			   
+               let id = $(this)[0].dataset.id;
+               let likePerson = "";
+
+               fetch('/data')
+                   .then((response) => response.json())
+                   .then((data) => {
+                       // 받은 데이터 활용
+                       likePerson = data.key;
+
+        			$.ajax({
+                       method: 'PUT',
+                       url: '/like',
+                       data: { postid: id, likePerson : likePerson },
+                   })
+                       .done(function (result) {
+						alert(result.message);
+						window.location.replace(`/`);
+					})
+                   .catch((error) => {
+                       // 에러 처리
+                       console.error('Error:', error);
+                   });
+
+           			});
+			});
+    </script>
+</html>

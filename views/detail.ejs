@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/public/detail.css" />
+        <title>메인페이지</title>
+    </head>
+    <body>
+        <header>
+            <img src="/public/logo.png" class="home" />
+        </header>
+        <aside>
+            <img src="/public/MYPIC.jpg" />
+            <div class="menu">
+                <p>
+                    글쓰기
+                </p>
+            </div>
+            <div class="menu2">
+                <p>
+                    메뉴추천
+                </p>
+            </div>
+        </aside>
+        <main>
+            <div class="container" id="<%=data[0].postId%>">
+                <div class="left">
+                    <img class="img" src="<%=data[0].writerPic%>" />
+                </div>
+                <div class="right">
+                    <p class="name">
+                        <%=data[0].writerName%>
+                    </p>
+                    <p class="time">
+                        <%=data[0].date.slice(0, 25);%>
+                    </p>
+                    <p class="maintext">
+                        <%=data[0].content%>
+                    </p>
+                    <div class="under">
+                        <img src="/public/heart.png" class="heart" />
+                        <p>
+                            <%=data[0].likes%>
+                        </p>
+                        <img src="/public/chat.png" class="chat" />
+                        <p>
+                            <%=data[0].comments%>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="comment">
+                <img class="img" src="<%=id[0].pic%>" />
+                <div class="commentbox">
+                    <textarea class="value"></textarea>
+                    <div class="send"></div>
+                </div>
+            </div>
+			
+            <% for (let i = comment.length - 1; i >= 0; i--) { %>
+            <div class="peoplecomment">
+                <img class="profileimg" src="<%=comment[i].writerPic%>" />
+                <div class="content">
+                    <div class="info">
+                        <span class="name"><%=comment[i].writerName%></span>
+                        <% if ((id.userid == comment[i].writer) || userid ==
+                        "108758216885974271525") { %>
+                        <img src="/public/x.png" class="delete" style="margin-top:10px" id="<%=comment[i].postId%>" />
+                        <% } %>
+                        <!--<span class="time"><%=comment[i].date.slice(0, 25);%></span>-->
+                    </div>
+                    <p class="maincomment">
+                        <%=comment[i].content%>
+                    </p>
+                </div>
+            </div>
+            <% } %>
+        </main>
+        <div class="phone">
+            <div class="button1">
+                <p>
+                    글쓰기
+                </p>
+            </div>
+            <div class="button2">
+                <p>
+                    메뉴 추천받기
+                </p>
+            </div>
+        </div>
+    </body>
+
+    <script
+        src="https://code.jquery.com/jquery-3.6.4.js"
+        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+        crossorigin="anonymous"
+    ></script>
+
+    <script>
+        $('.menu').on('click', function () {
+            window.location.replace(`/write`);
+        });
+        $('.button1').on('click', function () {
+            window.location.replace(`/write`);
+        });
+        $('.menu2').on('click', function () {
+            window.location.replace(`/suggestion`);
+        });
+        $('.button2').on('click', function () {
+            window.location.replace(`/suggestion`);
+        });
+        $('.home').on('click', function () {
+            window.location.replace(`/`);
+        });
+
+        $('.send').on('click', function () {
+            console.log($('.value')[0].value);
+
+            $.ajax({
+                method: 'POST',
+                url: '/commentupload',
+                data: { content: $('.value')[0].value, motherPost: $('.container')[0].id },
+                dataType: 'text',
+            })
+                .done(function () {
+                    alert('게시물 작성 완료!');
+                    location.reload();
+                })
+                .fail(function (xhr, textStatus, errorThrown) {
+                    console.log(xhr, textStatus, errorThrown);
+                });
+        });
+		
+		$('.delete').click(function (e) {
+               let id = e.target.id;
+               var clicked = $(this);
+
+               console.log($(this)[0]);
+
+               $.ajax({
+                   method: 'DELETE',
+                   url: '/commentdelete',
+                   data: { postid: id },
+               })
+                   .done(function (결과) {
+                       alert('삭제되었습니다!');
+                       clicked.parent('div').parent('div').parent('div').fadeOut();
+                   })
+                   .fail(function (xhr, textStatus, errorThrown) {
+                       console.log(xhr, textStatus, errorThrown);
+                   });
+           });
+    </script>
+</html>

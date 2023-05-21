@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    font-family: sans-serif;
+}
+
+header {
+    height: 184px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+header img {
+    margin: auto;
+    width: 300.12px;
+    height: 107px;
+}
+
+.loginbox {
+    width: 718px;
+    height: 643px;
+    background: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-radius: 48px;
+    margin: auto;
+    margin-top: 38px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+img {
+    margin-top: 78px;
+    width: 443px;
+    height: 449px;
+}
+
+.loginbox p {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 61px;
+    text-align: center;
+
+    color: #000000;
+    margin-top: 20px;
+}
+@media (max-width: 880px) {
+    header {
+        margin: 0px;
+        height: 69px;
+        width: 100%;
+        border-bottom: 1px solid #dcdcdc;
+    }
+
+    header img {
+        margin: auto;
+        width: 115px;
+        height: 41px;
+	}
+	
+	.loginbox {
+    width: 300px;
+    height: 300px;
+    background: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-radius: 48px;
+    margin: auto;
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+img {
+    margin-top: 20px;
+    width: 170px;
+    height: 170px;
+}
+
+.loginbox p {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 61px;
+    text-align: center;
+
+    color: #000000;
+    margin-top: 20px;
+}
+}

@@ -1,0 +1,672 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    font-family: sans-serif;
+}
+
+header {
+    height: 184px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+header img {
+    margin: auto;
+    width: 300.12px;
+    height: 107px;
+}
+
+aside {
+    width: 373px;
+    height: 895px;
+    background: #ffffff;
+    border-right: 1px solid #dcdcdc;
+    float: left;
+}
+
+aside img {
+    width: 227px;
+    height: 227px;
+    margin: 16px 73px;
+}
+
+aside .menu,
+.menu2 {
+    margin: 0px 105px 31px 105px;
+    padding-top: 8px;
+    width: 162px;
+    height: 49px;
+    background-color: #7209b7;
+    border-radius: 16px;
+}
+
+div p {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
+    color: #ffffff;
+    margin: 0px;
+}
+
+main {
+    width: calc(100% - 373px);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 38px;
+    flex-direction: column;
+}
+
+main .container {
+    margin-top: 38px;
+    width: 863px;
+    min-height: 168px;
+    height: auto;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+main p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    text-align: center;
+    color: #000000;
+}
+
+main .left {
+    width: 84px;
+    height: 168px;
+    float: left;
+}
+
+main .img {
+    width: 84px;
+    height: 84px;
+    border-radius: 50% 50% 50% 50%;
+    background-color: black;
+}
+
+.left img {
+    width: 84px;
+    height: 84px;
+    border-radius: 50% 50% 50% 50%;
+}
+
+main .right {
+    width: 779px;
+    height: auto;
+    float: right;
+}
+
+main .name {
+    margin-left: 28px;
+    float: left;
+}
+
+main .time {
+    color: #dcdcdc;
+    margin-left: 10px;
+    float: left;
+}
+
+main .delete {
+    display: block;
+    float: right;
+    margin-left: calc(100% - 300px);
+}
+
+main .maintext {
+    margin: 42px 0px 0px 28px;
+    text-align: left;
+    clear: left;
+}
+
+main .under {
+    width: 779px;
+    height: 104px;
+    display: flex;
+    flex-direction: row;
+    clear: left;
+}
+
+main .heart {
+    margin: 42px 0px 36px 28px;
+    width: 26px;
+    height: 26px;
+}
+
+.under p {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    text-align: center;
+    color: #dcdcdc;
+    width: 36px;
+    height: 27px;
+    margin: 40px 0px 36px 8px;
+}
+
+main .chat {
+    margin: 42px 0px 36px 33px;
+    width: 42.86px;
+    height: 25px;
+}
+
+.edit {
+    width: 130px;
+    height: 28px;
+    background: #7209b7;
+    border-radius: 16px;
+    margin: 42px 0px 36px 470px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.edit p {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 22px;
+    text-align: center;
+    margin: 0px;
+    color: #ffffff;
+    width: 67px;
+    height: 13px;
+}
+
+.comment {
+    margin-top: 38px;
+    width: 863px;
+    height: 140px;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.comment .img {
+    float: left;
+}
+
+.commentbox {
+    width: 759px;
+    height: 70px;
+    background: #dcdcdc;
+    border-radius: 36px;
+    float: right;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.comment textarea {
+    width: 600px;
+    height: 70px;
+    background: #dcdcdc;
+    border: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 60px;
+
+    color: #000000;
+    float: left;
+}
+
+.comment textarea:focus {
+    width: 600px;
+    height: 70px;
+    background: #dcdcdc;
+    outline: none;
+    float: left;
+}
+
+.send {
+    background: #7209b7;
+    width: 36px;
+    height: 36px;
+    float: right;
+    border-radius: 50% 50% 50% 50%;
+    margin: 15px 0px 0px 60px;
+}
+
+.peoplecomment {
+    margin-top: 38px;
+    width: 673px;
+    height: auto;
+    border-bottom: 1px solid #dcdcdc;
+    margin-bottom: 70px;
+}
+
+.profileimg {
+    position: relative;
+    top: 20px;
+    z-index: 1;
+    margin-left: 37px;
+    float: left;
+	border-radius: 50% 50% 50% 50%;
+}
+
+
+.peoplecomment .content {
+    position: relative;
+    width: 673px;
+    height: auto;
+    top: 43px;
+    background: #ffffff;
+    border: 1px solid #dcdcdc;
+    padding: 0px 10px 0px 10px;
+}
+
+.peoplecomment .info {
+    float: right;
+    width: 520px;
+    height: 18px;
+}
+
+.peoplecomment .info span {
+    margin: 0px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 39px;
+
+    color: #000000;
+}
+
+.peoplecomment .info .time {
+    color: #dcdcdc;
+    margin-left: 10px;
+}
+
+.maincomment {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    text-align: left;
+    margin: 10px 0px 20px 0px;
+    clear: left;
+}
+
+.phone {
+    display: none;
+}
+
+@media (max-width: 1260px) {
+    aside {
+        width: 0px;
+        height: 0px;
+    }
+
+    aside img {
+        width: 0px;
+        height: 0px;
+    }
+
+    aside .menu {
+        position: absolute;
+        top: 10px;
+        width: 162px;
+        height: 49px;
+        background-color: #7209b7;
+        border-radius: 16px;
+    }
+    aside .menu2 {
+        position: absolute;
+        top: 70px;
+        width: 162px;
+        height: 49px;
+        background-color: #7209b7;
+        border-radius: 16px;
+    }
+    main {
+        width: auto;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        margin-top: 38px;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 880px) {
+    header {
+        margin: 0px;
+        height: 69px;
+        width: 100%;
+        border-bottom: 1px solid #dcdcdc;
+    }
+
+    header img {
+        margin: auto;
+        width: 115px;
+        height: 41px;
+    }
+
+    aside {
+        display: none;
+    }
+
+    main {
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    main .container {
+        margin-top: 0px;
+        width: 100%;
+        min-height: 0px;
+        height: auto;
+        border-bottom: 1px solid #dcdcdc;
+    }
+
+    main p {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        text-align: center;
+    }
+
+    main .left {
+        width: 65px;
+        height: auto;
+        float: left;
+    }
+
+    main .img {
+        width: 44px;
+        height: 44px;
+        border-radius: 50% 50% 50% 50%;
+        background-color: black;
+        margin: 11px 0px 0px 21px;
+    }
+	
+	.profileimg {
+		width: 44px;
+        height: 44px;
+        border-radius: 50% 50% 50% 50%;
+        margin: 11px 0px 0px 21px;
+	}
+
+    main .right {
+        width: calc(100% - 65px);
+        height: auto;
+        float: right;
+    }
+
+    main .name {
+        margin-top: 11px;
+        margin-left: 15px;
+        float: left;
+    }
+
+    main .time {
+        color: #dcdcdc;
+        margin-top: 11px;
+        margin-left: 10px;
+        float: left;
+    }
+
+    main .maintext {
+        margin: 28px 0px 0px 15px;
+        text-align: left;
+        clear: left;
+		word-wrap: break-word;
+		padding-right:50px;
+    }
+
+    main .under {
+        width: calc(100% - 65px);
+        height: 32px;
+        display: flex;
+        flex-direction: row;
+        clear: left;
+    }
+
+    main .heart {
+        margin: 9px 0px 8px 15px;
+        width: 16px;
+        height: 16px;
+    }
+
+    .under p {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        text-align: center;
+
+        color: #dcdcdc;
+        width: 15px;
+        height: 14px;
+        margin: 9px 15px 8px 8px;
+    }
+
+    main .chat {
+        margin: 9px 0px 8px 8px;
+        width: 27.43px;
+        height: 16px;
+    }
+
+    .comment {
+        margin-top: 0px;
+        width: 100%;
+        min-height: 0px;
+        height: auto;
+        border-bottom: 1px solid #dcdcdc;
+    }
+
+    .comment .img {
+        float: left;
+		margin-bottom: 10px;
+    }
+
+    .commentbox {
+		width: calc(100% - 84px);
+        float: left;
+        height: 34px;
+        background: #dcdcdc;
+        border-radius: 36px;
+        margin-top: 15px;
+		margin-left:10px;
+		display:flex;
+		align-items: center;
+		flex-direction: row;
+		padding:1px;
+    }
+
+    .comment textarea {
+        width: calc(100% - 64px);
+        height: 20px;
+		margin: 0px 0px 0px 0px;
+        background: #dcdcdc;
+        border: none;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 30px;
+		overflow: hidden;
+		
+        color: #000000;
+        float: left;
+    }
+
+    .comment textarea:focus {
+        width: calc(100% - 64px);
+        height: 20px;
+        background: #dcdcdc;
+        outline: none;
+        float: left;
+		overflow: hidden;
+    }
+
+    .send {
+        background: #7209b7;
+        width: 16px;
+        height: 16px;
+        float: right;
+        border-radius: 50% 50% 50% 50%;
+        margin: 0px 0px 0px 0px;
+    }
+
+    .peoplecomment {
+        margin-top: 10px;
+        width: 285px;
+        height: auto;
+        border-bottom: 1px solid #dcdcdc;
+        margin-bottom: 40px;
+    }
+
+    .peoplecomment .img {
+        position: relative;
+        top: 10px;
+        z-index: 1;
+        margin-left: 37px;
+        float: left;
+    }
+
+    .peoplecomment .content {
+        position: relative;
+        width: 285px;
+        height: auto;
+        top: 43px;
+        background: #ffffff;
+        border: 1px solid #dcdcdc;
+        padding: 0px 10px 0px 10px;
+    }
+
+    .peoplecomment .info {
+        float: right;
+        width: 185px;
+        height: 18px;
+    }
+
+    .peoplecomment .info span {
+        margin: 0px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 19px;
+
+        color: #000000;
+    }
+
+    .peoplecomment .info .time {
+        color: #dcdcdc;
+        margin-left: 10px;
+    }
+
+    .maincomment {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        text-align: left;
+        margin-top: 10px;
+        clear: left;
+    }
+
+    .phone {
+        display: none;
+    }
+
+    .phone {
+        display: block;
+        position: fixed;
+        width: 100%;
+        height: 60px;
+        bottom: 0px;
+        border-top: 1px solid #dcdcdc;
+        padding: 15px 18px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .button1 {
+        width: 162px;
+        height: 30px;
+        background: #ffffff;
+        border: 1px solid #dcdcdc;
+        border-radius: 16px;
+        padding: 4px;
+    }
+
+    .button1 p {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 18px;
+        text-align: center;
+        color: #7209b7;
+    }
+    .button2 {
+        width: 162px;
+        height: 30px;
+        background: #7209b7;
+        border: 1px solid #dcdcdc;
+        border-radius: 16px;
+        padding: 4px;
+    }
+    .button2 p {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 18px;
+        text-align: center;
+        color: #ffffff;
+    }
+
+    main .delete {
+        display: block;
+        float: right;
+        width: 15px;
+        height: 15px;
+        margin-top: 11px;
+        margin-left: calc(100% - 300px);
+        margin-right: 10px;
+    }
+    .edit {
+        width: 50px;
+        height: 16px;
+        background: #7209b7;
+        border-radius: 16px;
+        margin: 9px 0px 8px calc(100% - 135px);
+    }
+
+    .edit p {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 8px;
+        line-height: 5px;
+        text-align: center;
+        margin: 0px;
+        color: #ffffff;
+        width: 38px;
+        height: 7px;
+    }
+}

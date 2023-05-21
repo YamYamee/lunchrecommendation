@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/public/write.css" />
+        <title>메인페이지</title>
+    </head>
+    <body>
+        <header>
+            <img src="/public/logo.png" class="home" />
+        </header>
+        <div class="container">
+            <div class="textbox">
+                <div class="left">
+                    <img src="<%=data[0].pic%>" class="userpic" />
+                </div>
+                <div class="right">
+                    <div class="topinfo">
+                        <p class="name">
+                            <%=data[0].name%>
+                        </p>
+                    </div>
+                    <div class="main">
+                        <div class="content">
+                            <textarea class="value"></textarea>
+                        </div>
+                        <div class="button">
+                            <p>
+                                작성하기
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="phone">
+            <div class="button1">
+                <p>
+                    글쓰기
+                </p>
+            </div>
+            <div class="button2">
+                <p>
+                    메뉴 추천받기
+                </p>
+            </div>
+        </div>
+    </body>
+
+    <script
+        src="https://code.jquery.com/jquery-3.6.4.js"
+        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+        crossorigin="anonymous"
+    ></script>
+
+    <script>
+        $('.home').on('click', function () {
+            window.location.replace(`/`);
+        });
+
+        $('.button').on('click', function () {
+			
+            $.ajax({
+                method: 'POST',
+                url: '/upload',
+                data: { content :  $('.value')[0].value},
+				dataType : "text"
+            })
+                .done(function() {
+                    alert('게시물 작성 완료!');
+					window.location.replace('/');
+                })
+                .fail(function (xhr, textStatus, errorThrown) {
+                    console.log(xhr, textStatus, errorThrown);
+                });
+
+        });
+		$('.button1').on('click', function () {
+			
+            $.ajax({
+                method: 'POST',
+                url: '/upload',
+                data: { content :  $('.value')[0].value},
+				dataType : "text"
+            })
+                .done(function() {
+                    alert('게시물 작성 완료!');
+					window.location.replace('/');
+                })
+                .fail(function (xhr, textStatus, errorThrown) {
+                    console.log(xhr, textStatus, errorThrown);
+                });
+
+        });
+    </script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 Not Found</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 30px;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+
+    .redirect-message {
+      font-size: 14px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>404 Not Found</h1>
+  <p>잘못된 접근입니다!</p>
+
+  <script>
+    setTimeout(() => {
+      window.location.href = '/';
+    }, 3000); // 3초 후에 홈 페이지로 리다이렉트
+  </script>
+
+  <div class="redirect-message">3초뒤에 홈페이지로 이동할게요!</div>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/public/suggestion.css" />
+        <title>메인페이지</title>
+    </head>
+    <body>
+        <header>
+            <img src="/public/logo.png" class="home" />
+        </header>
+        <div class="container">
+            <div class="chatbox">
+                <p class="content">
+                    내가 메뉴를 추천해줄게!<br />
+                    날 클릭해줘!
+                </p>
+            </div>
+            <div class="character">
+                <img src="/public/MYPIC.jpg" class="character" />
+            </div>
+        </div>
+        <div class="phone">
+            <div class="button2">
+                <p>
+                    홈
+                </p>
+            </div>
+        </div>
+    </body>
+
+    <script
+        src="https://code.jquery.com/jquery-3.6.4.js"
+        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+        crossorigin="anonymous"
+    ></script>
+
+    <script>
+        const menu = [
+            '불고기',
+            '비빔밥',
+            '보쌈정식',
+            '전골',
+            '쌈밥',
+            '낙지볶음',
+            '간장게장',
+            '닭갈비',
+            '생선구이',
+            '된장찌개',
+            '순두부찌개',
+            '부대찌개',
+            '동태찌개',
+            '김치찌개',
+            '갈비탕',
+            '삼계탕',
+            '추어탕',
+            '청국장',
+            '짜장면',
+            '짬뽕',
+            '볶음밥',
+            '우동',
+            '간짜장',
+            '마라탕',
+            '중화비빔밥',
+            '굴짬뽕',
+            '잡채밥',
+            '초밥',
+            '일본라멘',
+            '덮밥',
+            '돈까스',
+            '우동',
+            '메밀소바',
+            '치즈돈까스',
+            '카레라이스',
+            '주먹밥',
+            '스파게티',
+            '함박 스테이크',
+            '피자',
+            '수제 햄버거',
+            '크림 파스타',
+            '샐러드',
+            '필라프',
+            '부리또',
+            '타코',
+            '선지 해장국',
+            '뼈 해장국',
+            '우거지 해장국',
+            '육개장',
+            '북어국',
+            '순대국',
+            '콩나물 국밥',
+            '복국',
+            '쌀국수',
+            '샌드위치',
+            '토스트',
+            '편의점도시락',
+            '샐러드',
+            '김밥',
+            '밥버거',
+            '떡볶이',
+            '빵과 우유',
+            '와플, 조각케익',
+            '칼국수',
+            '햄버거',
+            '본죽',
+            '잔치국수',
+            '월남쌈',
+            '수제비',
+            '타코야끼',
+            '핫도그',
+            '팟타이',
+			'걍 굶기'
+        ];
+
+        $('.character').on('click', function () {
+			
+			const number = Math.floor(Math.random() * menu.length);
+			
+            $('.content')[0].innerHTML = `오늘 점심은 ${menu[number]}(이)야!`;
+        });
+        $('.home').on('click', function () {
+            window.location.replace(`/`);
+        });
+    </script>
+</html>
