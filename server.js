@@ -5,8 +5,8 @@ const passport = require('passport'); //passport 라이브러리 활용
 const GoogleStrategy = require('passport-google-oauth2').Strategy; // 구글의 로그인 전략
 const mongoose = require('mongoose');
 
-const GOOGLE_CLIENT_ID = '631223913006-3nabihp7le0pfu1ipdf2oua51jha6ups.apps.googleusercontent.com';
-const GOOGLE_CLIENT_SECRET = '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';
+const GOOGLE_CLIENT_ID = '';
+const GOOGLE_CLIENT_SECRET = '';
 
 app.set('view engine', 'ejs'); //ejs 라이브러리 활용;
 app.use('/public', express.static('public')); // public 경로 사용
@@ -45,8 +45,8 @@ passport.deserializeUser(function (id, done) {
 passport.use(
     new GoogleStrategy(
         {
-            clientID: '631223913006-3nabihp7le0pfu1ipdf2oua51jha6ups.apps.googleusercontent.com',
-            clientSecret: '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',
+            clientID: '',
+            clientSecret: '',
             callbackURL: 'https://whattoeat.run.goorm.site/login/redirect',
             passReqToCallback: true,
         },
